@@ -79,7 +79,11 @@ public class CodeSnippetController {
         }
         }
 
+    @GetMapping("/")
+    public String getDefaultPage() {
 
+        return "Use the endpoint /code/new to submit new code snippets or /code/latest to view the most recent submissions";
+    }
 
     @GetMapping("/api/code/{id}")
     public CodeSnippet getCodeJSON(@PathVariable String id) {
