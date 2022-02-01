@@ -27,13 +27,14 @@ jar {
 		'Main-Class': 'com.djblackett.coderepositoryserver.CodeSharingPlatform')
 	}
 
-	tasks.withType(Copy).all {
-		duplicatesStrategy 'exclude'
+	tasks {
+		duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+		from {
+			configurations.runtimeClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+		}
 	}
 
-	from {
-		configurations.runtimeClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
-	}
+
 }
 
 repositories {
