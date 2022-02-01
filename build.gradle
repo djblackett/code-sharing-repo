@@ -26,6 +26,10 @@ jar {
 				"Implementation-Version": archiveVersion,
 		'Main-Class': 'com.djblackett.coderepositoryserver.CodeSharingPlatform')
 	}
+
+	from {
+		configurations.runtimeClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+	}
 }
 
 repositories {
