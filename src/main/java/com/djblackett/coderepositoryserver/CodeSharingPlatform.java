@@ -18,7 +18,7 @@ public class CodeSharingPlatform {
 
         // FreeMarker tools setup
         cfg = new Configuration(Configuration.VERSION_2_3_29);
-        File tempDir = new File("\\dev\\Java\\Code Sharing Platform\\Code Sharing Platform\\task\\src\\resources\\templates");
+        File tempDir = new File("src/main/resources/templates");
 
 
         cfg.setDirectoryForTemplateLoading(tempDir);
