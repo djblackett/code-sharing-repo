@@ -20,6 +20,14 @@ configurations {
 	}
 }
 
+jar {
+	manifest {
+		attributes("Implementation-Title": "Gradle",
+				"Implementation-Version": archiveVersion,
+		'Main-Class': 'com.djblackett.CodeSharingPlatform')
+	}
+}
+
 repositories {
 	mavenCentral()
 }
